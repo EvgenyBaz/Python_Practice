@@ -1,0 +1,14 @@
+# Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+#
+# Пример:
+#
+# - 45 -> 101101
+# - 3 -> 11
+# - 2 -> 10
+
+dec_number = int(input("введите натуральное число: "))
+bin_number = ""
+while dec_number != 0:
+    bin_number = bin_number + str(dec_number % 2)
+    dec_number = dec_number // 2
+print (bin_number)
