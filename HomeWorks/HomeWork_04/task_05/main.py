@@ -39,7 +39,6 @@ def polynome_gen(dict_n):
 
     for pow_d in powers:
         const = dict_n[pow_d]
-        print (const , " ", pow_d)
         if pow_d == 0:
             polynome = "+" + str(const)+polynome
         elif pow_d == 1:
