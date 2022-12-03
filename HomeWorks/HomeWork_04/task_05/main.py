@@ -34,33 +34,29 @@ def polynome_gen(dict_n):
 
     polynome = '=0'
 
-    m = dict_n.get(0, 0)
-    if m != 0:
-        polynome = "+" + str(m) + polynome
+    powers = sorted(dict_n.keys())
+    print(powers)
 
-    m = dict_n.get(1, 0)
-    if m != 0:
-        if m == 1:
-            polynome = "+x" + polynome
-        else:
-            polynome = "+" + str(m) + "*x" +polynome
-
-    for i in range(2, len(dict_n)):
-        m = dict_n.get(i,0)
-
-        if m != 0:
-            if m == 1:
-                if i != len(dict_n)-1:
-                    polynome = "+x^" + str(i) + polynome
-                else:
-                    polynome = "x^" + str(i) + polynome
+    for pow_d in powers:
+        const = dict_n[pow_d]
+        print (const , " ", pow_d)
+        if pow_d == 0:
+            polynome = "+" + str(const)+polynome
+        elif pow_d == 1:
+            if const == 1:
+                polynome = "+x" + polynome
             else:
-                if i != len(dict_n)-1:
-                    polynome = "+" + str(m) + "*x^" + str(i) + polynome
-                else:
-                    polynome = str(m) + "*x^" + str(i) + polynome
+                polynome = "+" + str(const) + "*x" + polynome
+        else:
+            if const == 1:
+                polynome = "+x^" + str(pow_d) + polynome
+            else:
+                polynome = "+" + str(const) + "*x^" + str(pow_d) + polynome
+
+    polynome = polynome[1:]
 
     return polynome
+
 
 #    --------------------------------------------
 # path_1 = input("введите имя первого файла: ")
