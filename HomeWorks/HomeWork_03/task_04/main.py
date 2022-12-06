@@ -9,6 +9,6 @@
 dec_number = int(input("введите натуральное число: "))
 bin_number = ""
 while dec_number != 0:
-    bin_number = bin_number + str(dec_number % 2)
+    bin_number =str(dec_number % 2) + bin_number
     dec_number = dec_number // 2
 print (bin_number)
