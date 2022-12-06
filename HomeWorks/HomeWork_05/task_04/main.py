@@ -32,10 +32,23 @@ def rld (string):
             number_str = ""
     return res_string
 
-
-string1 = "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW"
-
+file = open("origin.txt", "r")
+string1 = file.readline()
+file.close()
 print(string1)
 string2 = rle(string1)
 print(string2)
+
+file = open("origin_coded.txt", "w")
+file.write(string2)
+file.close()
+
+file = open("origin_coded.txt", "r")
+string2 = file.readline()
+file.close()
+print(string2)
 print(rld(string2))
+
+file = open("origin_decoded.txt", "w")
+file.write(rld(string2))
+file.close()
