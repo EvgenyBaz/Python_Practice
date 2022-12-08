@@ -88,5 +88,8 @@ for k in poly_dic2.keys():
     if poly_dic1.get(k, 0) == 0:
         sum_dic[k] = poly_dic2[k]
 print(sum_dic)
-# sum_dic = dict(sorted(sum_dic.items(), reverse=True)) ??? не работает??? :(
+# sum_dic = dict(sorted(sum_dic.items(), reverse=True, key= lambda i: i[0]))
+# key= lambda i: i[0] добавить
+
+
 print(polynome_gen(sum_dic))
